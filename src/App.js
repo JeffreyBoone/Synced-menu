@@ -7,20 +7,20 @@ class App extends React.Component {
     this.state = {
       text: [
         { id: 1, className: '', category: '1', price: '$49.99', stocked: true, name: 'Football' },
-        { id: 2, className: '', category: '4', price: '$9.99', stocked: true, name: 'Baseball' },
-        { id: 3, className: '', category: '2', price: '$29.99', stocked: false, name: 'Basketball' },
-        { id: 4, className: '', category: '5', price: '$99.99', stocked: true, name: 'iPod Touch' },
-        { id: 5, className: '', category: '3', price: '$399.99', stocked: false, name: 'iPhone 5' },
+        { id: 4, className: '', category: '4', price: '$9.99', stocked: true, name: 'Baseball' },
+        { id: 2, className: '', category: '2', price: '$29.99', stocked: false, name: 'Basketball' },
+        { id: 5, className: '', category: '5', price: '$99.99', stocked: true, name: 'iPod Touch' },
+        { id: 3, className: '', category: '3', price: '$399.99', stocked: false, name: 'iPhone 5' },
         { id: 6, className: '', category: '6', price: '$199.99', stocked: true, name: 'Nexus 7' }
       ],
       text2: [
-        { id: 6, className: '', category: '4', price: '$199.99', stocked: true, name: 'Nexus 7' },
-        { id: 1, className: '', category: '7', price: '$49.99', stocked: true, name: 'Football' },
-        { id: 7, className: '', category: '3', price: '$99.99', stocked: true, name: 'iPod Touch' },
-        { id: 4, className: '', category: '6', price: '$99.99', stocked: true, name: 'iPod Touch' },
-        { id: 5, className: '', category: '2', price: '$399.99', stocked: false, name: 'iPhone 5' },
-        { id: 2, className: '', category: '5', price: '$9.99', stocked: true, name: 'Baseball' },
-        { id: 3, className: '', category: '1', price: '$29.99', stocked: false, name: 'Basketball' },
+        { id: 4, className: '', category: '4', price: '$199.99', stocked: true, name: 'Nexus 7' },
+        { id: 7, className: '', category: '7', price: '$49.99', stocked: true, name: 'Football' },
+        { id: 3, className: '', category: '3', price: '$99.99', stocked: true, name: 'iPod Touch' },
+        { id: 6, className: '', category: '6', price: '$99.99', stocked: true, name: 'iPod Touch' },
+        { id: 2, className: '', category: '2', price: '$399.99', stocked: false, name: 'iPhone 5' },
+        { id: 5, className: '', category: '5', price: '$9.99', stocked: true, name: 'Baseball' },
+        { id: 1, className: '', category: '1', price: '$29.99', stocked: false, name: 'Basketball' },
       ],
     };
   }
