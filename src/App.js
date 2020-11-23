@@ -6,31 +6,32 @@ class App extends React.Component {
     super(props);
     this.state = {
       text: [
-        { id: 1, className: '', category: '1', price: '$49.99', stocked: true, name: 'Football' },
-        { id: 4, className: '', category: '4', price: '$9.99', stocked: true, name: 'Baseball' },
-        { id: 2, className: '', category: '2', price: '$29.99', stocked: false, name: 'Basketball' },
-        { id: 5, className: '', category: '5', price: '$99.99', stocked: true, name: 'iPod Touch' },
-        { id: 3, className: '', category: '3', price: '$399.99', stocked: false, name: 'iPhone 5' },
-        { id: 6, className: '', category: '6', price: '$199.99', stocked: true, name: 'Nexus 7' }
+        { id: 1, className: '', name: '1'},
+        { id: 4, className: '', name: '4'},
+        { id: 2, className: '', name: '2'},
+        { id: 5, className: '', name: '5'},
+        { id: 3, className: '', name: '3'},
+        { id: 8, className: '', name: '8'},
+        { id: 6, className: '', name: '6'}
       ],
       text2: [
-        { id: 4, className: '', category: '4', price: '$199.99', stocked: true, name: 'Nexus 7' },
-        { id: 7, className: '', category: '7', price: '$49.99', stocked: true, name: 'Football' },
-        { id: 3, className: '', category: '3', price: '$99.99', stocked: true, name: 'iPod Touch' },
-        { id: 6, className: '', category: '6', price: '$99.99', stocked: true, name: 'iPod Touch' },
-        { id: 2, className: '', category: '2', price: '$399.99', stocked: false, name: 'iPhone 5' },
-        { id: 5, className: '', category: '5', price: '$9.99', stocked: true, name: 'Baseball' },
-        { id: 1, className: '', category: '1', price: '$29.99', stocked: false, name: 'Basketball' },
+        { id: 4, className: '', name: '4'},
+        { id: 7, className: '', name: '7'},
+        { id: 3, className: '', name: '3'},
+        { id: 6, className: '', name: '6'},
+        { id: 2, className: '', name: '2'},
+        { id: 5, className: '', name: '5'},
+        { id: 1, className: '', name: '1'},
       ],
     };
   }
 
-  onclick(id) {
-    this.set(id);
-    this.set2(id);
+  onclick(id, name) {
+    this.set(id, name);
+    this.set2(id, name);
   }
 
-  set(id) {
+  set(id, name) {
     let s = this.state.text.map(f => {
       if (f.id === id & f.className === "") {
         f.className = "blue";
@@ -38,18 +39,28 @@ class App extends React.Component {
       return f;
     });
 
+    var t = this.state.text.filter(g => (g.id === id));
+    if (t == "") {
+      alert(name + " is niet gevonden in de andere lijst");
+    }
+
     this.setState({
       text: s
     })
   }
 
-  set2(id) {
+  set2(id, name) {
     let s = this.state.text2.map(f => {
       if (f.id === id & f.className === "") {
         f.className = "blue";
       } else f.className = "";
       return f;
     });
+
+    var t = this.state.text2.filter(g => (g.id === id));
+    if (t == "") {
+      alert(name + " is niet gevonden in de andere lijst");
+    }
 
     this.setState({
       text2: s
@@ -64,18 +75,18 @@ class App extends React.Component {
       <div>
         <ul>
           {text.map((t) =>
-            <li key={t.id} className={t.className} onClick={() => this.onclick(t.id)}>{t.category}</li>
+            <li key={t.id} className={t.className} onClick={() => this.onclick(t.id, t.name)}>{t.name}</li>
           )}
         </ul>
       </div>
       <div>
         <ul>
           {text2.map((t) =>
-            <li key={t.id} className={t.className} onClick={() => this.onclick(t.id)}>{t.category}</li>
+            <li key={t.id} className={t.className} onClick={() => this.onclick(t.id, t.name)}>{t.name}</li>
           )}
         </ul>
       </div>
-      </div>
+    </div>
     );
   }
 }
